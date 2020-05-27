@@ -60,6 +60,7 @@ namespace radio24 {
      */
     //% async
     void sendRawPacket(Buffer msg) {
+        uBit.serial.putc('S');
         uBit.radio.datagram.send(msg->data, msg->length);
     }
 
