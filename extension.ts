@@ -43,4 +43,13 @@ namespace radio24 {
     export function sendBuffer(msg: Buffer) {
         sendRawPacket(msg);
     }
+
+    /**
+     * Send string
+     */
+    //% blockId=radio24_send_string block="Send $str"
+    export function sendString(str: string) {
+        let buf = control.createBufferFromUTF8(str);
+        sendRawPacket(buf);
+    }
 }
