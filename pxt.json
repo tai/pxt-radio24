@@ -1,11 +1,10 @@
 {
-    "name": "hello",
-    "version": "0.0.1",
-    "description": "Minimal extension",
+    "name": "radio24",
+    "version": "0.0.2",
+    "description": "Enable nRF24-compatible radio",
     "license": "MIT",
     "dependencies": {
-        "core": "*",
-        "radio": "*"
+        "core": "*"
     },
     "files": [
         "README.md",

@@ -1,4 +1,7 @@
 
+/**
+ * Communicate with nRF24 devices
+ */
 namespace radio24 {
     let onReceivedBufferHandler: (receivedBuffer: Buffer) => void;
 
@@ -31,25 +34,14 @@ namespace radio24 {
         onReceivedBufferHandler = cb;
     }
 
+    /**
+     * Send data
+     * 
+     * @param msg Buffer to send
+     */
+    //% weight=57
+    //% advanced=true
     export function sendBuffer(msg: Buffer) {
         sendRawPacket(msg);
-    }
-
-    /**
-     * Toggle output
-     * @param pin pin to toggle output
-     */
-    //% weight=30 blockId="hello_toggle" block="Toggle output"
-    export function toggle(pin: DigitalPin): void {
-        pin = pin ^ 1;
-    }
-
-    /**
-     * Function for simulator. Actual implementation is in cpp.
-     * @param val base number
-     */
-    //% radio24=hello::add10
-    function add10(val: number) {
-        return val + 100;
     }
 }

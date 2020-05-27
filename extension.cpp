@@ -57,15 +57,15 @@ namespace radio24 {
     }
 
     /**
-     * Send data
+     * Internal use only. Sends a raw packet.
      */
-    //%
+    //% async
     void sendRawPacket(Buffer msg) {
         uBit.radio.datagram.send(msg->data, msg->length);
     }
 
     /**
-     * Internal data receive handler
+     * Internal use only. Receive handler.
      */
     //% blockId=radio24_data_received_event block="radio on data received"
     //% deprecard=true blockHidden=1
@@ -77,8 +77,9 @@ namespace radio24 {
     /**
      * Run test
      */
-    //% blockId=radio24_test block="Run test"
-    void test() {
+    //% blockId=radio24_ping block="Run extension test"
+    void ping() {
 	    uBit.display.clear();
+        uBit.display.printChar('A');
     }
 }
