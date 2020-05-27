@@ -20,6 +20,7 @@ namespace radio24 {
      * Enable the radio
      */
     //% blockId=radio24_enable block="Activate radio with band=$band, power=$power"
+    //% weight=10
     //% band.min=0 band.max=99 power.min=0 power.max=7
     void enable(int band=7, int power=0) {
         uBit.radio.enable();
@@ -77,7 +78,6 @@ namespace radio24 {
      */
     //% blockId=radio24_ping block="Run extension test"
     void ping() {
-        uBit.display.printChar('A');
-        uBit.display.printChar('B');
+        uBit.display.scrollAsync("AB");
     }
 }
