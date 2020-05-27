@@ -68,7 +68,7 @@ namespace radio24 {
      * Internal use only. Receive handler.
      */
     //% blockId=radio24_data_received_event block="radio on data received"
-    //% deprecard=true blockHidden=1
+    //% deprecated=true blockHidden=1
     void onDataReceived(Action body) {
         registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
         uBit.radio.datagram.recv();
