@@ -20,23 +20,23 @@ declare namespace radio24 {
     function readRawPacket(): Buffer;
 
     /**
-     * Send data
+     * Internal use only. Sends a raw packet.
      */
-    //% shim=radio24::sendRawPacket
+    //% async shim=radio24::sendRawPacket
     function sendRawPacket(msg: Buffer): void;
 
     /**
-     * Internal data receive handler
+     * Internal use only. Receive handler.
      */
     //% blockId=radio24_data_received_event block="radio on data received"
-    //% deprecard=true blockHidden=1 shim=radio24::onDataReceived
+    //% deprecated=true blockHidden=1 shim=radio24::onDataReceived
     function onDataReceived(body: () => void): void;
 
     /**
-     * Run test
+     * Run ping test
      */
-    //% blockId=radio24_test block="Run test" shim=radio24::test
-    function test(): void;
+    //% blockId=radio24_ping block="Run extension test" shim=radio24::ping
+    function ping(): void;
 }
 
 // Auto-generated. Do not edit. Really.

@@ -75,7 +75,7 @@ namespace radio24 {
     }
 
     /**
-     * Run test
+     * Run ping test
      */
     //% blockId=radio24_ping block="Run extension test"
     void ping() {
