@@ -1,16 +1,22 @@
 // Auto-generated. Do not edit.
+
+
+
+    //% color="#AA278D" icon="\uf0a4"
 declare namespace radio24 {
 
     /**
      * Enable the radio
      */
-    //% blockId=radio24_enable block="Enable radio24 module" band.defl=7 power.defl=0 shim=radio24::enable
+    //% blockId=radio24_enable block="Activate radio with band=$band, power=$power"
+    //% band.min=0 band.max=99 power.min=0 power.max=7 band.defl=7 power.defl=0 shim=radio24::enable
     function enable(band?: int32, power?: int32): void;
 
     /**
      * Set group
      */
-    //% blockId=radio24_set_group block="Set radio group ID" shim=radio24::setGroup
+    //% blockId=radio24_set_group block="Set group to $group"
+    //% group.min=0 group.max=255 shim=radio24::setGroup
     function setGroup(group: uint8): int32;
 
     /**
@@ -29,7 +35,7 @@ declare namespace radio24 {
      * Internal use only. Receive handler.
      */
     //% blockId=radio24_data_received_event block="radio on data received"
-    //% deprecated=true blockHidden=1 shim=radio24::onDataReceived
+    //% deprecated=true blockHidden=true shim=radio24::onDataReceived
     function onDataReceived(body: () => void): void;
 
     /**

@@ -39,7 +39,6 @@ namespace radio24 {
      * 
      * @param msg Buffer to send
      */
-    //% weight=57
     //% advanced=true
     export function sendBuffer(msg: Buffer) {
         sendRawPacket(msg);

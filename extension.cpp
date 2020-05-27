@@ -5,18 +5,22 @@
 
 using namespace pxt;
 
-enum HelloNumber {
-    //% block="foo"
-    FOO = 1,
-    //% block="bar"
-    BAR = 2
+enum Mode {
+    //% block="1Mbps"
+    Mode_1Mbps = 0,
+    //% block="2Mbps"
+    Mode_2Mbps,
+    //% block="250Kbps"
+    Mode_250Kbps
 };
 
+//% color="#AA278D" icon="\uf0a4"
 namespace radio24 {
     /**
      * Enable the radio
      */
-    //% blockId=radio24_enable block="Enable radio24 module"
+    //% blockId=radio24_enable block="Activate radio with band=$band, power=$power"
+    //% band.min=0 band.max=99 power.min=0 power.max=7
     void enable(int band=7, int power=0) {
         uBit.radio.enable();
         uBit.radio.setTransmitPower(power);
@@ -26,13 +30,14 @@ namespace radio24 {
         NRF_RADIO->PCNF0 = 0x00000006; // on-air LENGTH field length of 6bit
         NRF_RADIO->PCNF1 = 0x01040000 | 32; // no whitening, big endian, 32B payload
     	NRF_RADIO->DATAWHITEIV = 0x00;
-        NRF_RADIO->MODE = 0; // 1Mbps
+        NRF_RADIO->MODE = Mode_1Mbps;
     }
 
     /**
      * Set group
      */
-    //% blockId=radio24_set_group block="Set radio group ID"
+    //% blockId=radio24_set_group block="Set group to $group"
+    //% group.min=0 group.max=255
     int setGroup(uint8_t group) {
         return uBit.radio.setGroup(group);
     }
@@ -61,7 +66,7 @@ namespace radio24 {
      * Internal use only. Receive handler.
      */
     //% blockId=radio24_data_received_event block="radio on data received"
-    //% deprecated=true blockHidden=1
+    //% deprecated=true blockHidden=true
     void onDataReceived(Action body) {
         registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
         uBit.radio.datagram.recv();
