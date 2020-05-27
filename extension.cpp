@@ -14,14 +14,6 @@ enum HelloNumber {
 
 namespace radio24 {
     /**
-     * Add 10 to given value
-     */
-    //% blockId=radio24_add10 block="add 10"
-    uint16_t add10(uint16_t val) {
-        return val + 10;
-    }
-
-    /**
      * Enable the radio
      */
     //% blockId=radio24_enable block="Enable radio24 module"
@@ -40,6 +32,7 @@ namespace radio24 {
     /**
      * Set group
      */
+    //% blockId=radio24_set_group block="Set radio group ID"
     int setGroup(uint8_t group) {
         return uBit.radio.setGroup(group);
     }
@@ -79,7 +72,7 @@ namespace radio24 {
      */
     //% blockId=radio24_ping block="Run extension test"
     void ping() {
-	    uBit.display.clear();
         uBit.display.printChar('A');
+        uBit.display.printChar('B');
     }
 }

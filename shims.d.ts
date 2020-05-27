@@ -2,16 +2,16 @@
 declare namespace radio24 {
 
     /**
-     * Add 10 to given value
-     */
-    //% blockId=radio24_add10 block="add 10" shim=radio24::add10
-    function add10(val: uint16): uint16;
-
-    /**
      * Enable the radio
      */
     //% blockId=radio24_enable block="Enable radio24 module" band.defl=7 power.defl=0 shim=radio24::enable
     function enable(band?: int32, power?: int32): void;
+
+    /**
+     * Set group
+     */
+    //% blockId=radio24_set_group block="Set radio group ID" shim=radio24::setGroup
+    function setGroup(group: uint8): int32;
 
     /**
      * Receive data
