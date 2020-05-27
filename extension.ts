@@ -52,4 +52,12 @@ namespace radio24 {
         let buf = control.createBufferFromUTF8(str);
         sendRawPacket(buf);
     }
+
+    /** For simulator. */
+    //% shim=radio24::enable
+    function enable(band?: int32, power?: int32): void {}
+
+    /** For simulator */
+    //% shim=radio24::setGroup
+    function setGroup(group: int8): void {}
 }
