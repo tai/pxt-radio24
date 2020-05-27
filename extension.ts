@@ -59,5 +59,5 @@ namespace radio24 {
 
     /** For simulator */
     //% shim=radio24::setGroup
-    function setGroup(group: int8): void {}
+    function setGroup(group: uint8): void {}
 }
