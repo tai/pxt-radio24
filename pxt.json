@@ -1,0 +1,21 @@
+{
+    "name": "hello",
+    "version": "0.0.1",
+    "description": "Minimal extension",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "extension.ts",
+        "extension.cpp",
+        "shims.d.ts",
+        "enums.d.ts"
+    ],
+    "testFiles": [
+        "tests.ts"
+    ],
+    "public": true
+}
