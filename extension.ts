@@ -55,13 +55,13 @@ namespace radio24 {
 
     /** For simulator. */
     //% shim=radio24::enable
-    function enable(band?: int32, power?: int32): void {
+    export function shim_enable(band?: int32, power?: int32): void {
         return;
     }
 
     /** For simulator */
     //% shim=radio24::setGroup
-    function setGroup(group: uint8): void {
+    export function shim_setGroup(group: uint8): void {
         return;
     }
 }
