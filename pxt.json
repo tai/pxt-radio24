@@ -1,6 +1,6 @@
 {
     "name": "radio24",
-    "version": "0.2.305",
+    "version": "0.2.306",
     "description": "Enable nRF24-compatible radio",
     "license": "MIT",
     "dependencies": {
@@ -25,5 +25,5 @@
                 }
             }
         }
-    }    
+    }
 }
