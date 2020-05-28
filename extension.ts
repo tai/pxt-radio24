@@ -53,13 +53,23 @@ namespace radio24 {
      * 
      * @param group [0-255] Defaults to 0. Set group ID to communicate.
      * @param band [0-100] Defaults to 7. Set frequency (2400+band[MHz]) to be used.
-     * @param power [0-7] Defaults to 0. Set transmit power level.
      */
     //% blockId=radio24_enable block="radio24: Enable with group=$group, band=$band, power=$power"
     //% weight=90
     //% shim=radio24::enable
-    export function enable(group: number, band: number, power: number): void {
+    export function enable(group: number, band: number): void {
         console.log("Radio enabled");
+    }
+
+    /**
+     * Set radio transmit power
+     * 
+     * @param power [0-7] Defaults to 0. Set transmit power level.
+     */
+    //% blockId=radio24_set_power block="radio24: Set transmit power to $power"
+    //% shim=radio24::setPower
+    export function setPower(power: uint8): void {
+        console.log("Setting radio power");
     }
 
     /**

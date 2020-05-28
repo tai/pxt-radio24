@@ -17,11 +17,11 @@ enum Mode {
 //% color="#AA278D" icon="\uf0a4"
 namespace radio24 {
     //%
-    void enable(uint8_t group, uint8_t band, uint8_t power) {
+    void enable(uint8_t group, uint8_t band) {
         uBit.radio.enable();
         uBit.radio.setGroup(group);
-        uBit.radio.setTransmitPower(power);
         uBit.radio.setFrequencyBand(band);
+        uBit.radio.setTransmitPower(0);
 
         // Make it compatible with nRF24
         NRF_RADIO->PCNF0 = 0x00000006; // on-air LENGTH field length of 6bit
@@ -33,6 +33,11 @@ namespace radio24 {
     //%
     void setGroup(uint8_t group) {
         uBit.radio.setGroup(group);
+    }
+
+    //%
+    void setPower(uint8_t power) {
+        uBit.radio.setTransmitPower(power);
     }
 
     //%
