@@ -84,7 +84,7 @@ namespace radio24 {
     /**
      * Ping test
      */
-    //% blockId=radio24_ping block="Run extension test"
+    //% blockId=radio24_ping block="Run test 000"
     //% shim=radio24::ping
     export function ping(): void {
         basic.showString("SIM");
