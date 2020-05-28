@@ -8,5 +8,5 @@ input.onButtonPressed(Button.A, () => {
 
 input.onButtonPressed(Button.B, () => {
     basic.showString("B")
-    radio24.ping()
+    radio24.test()
 })

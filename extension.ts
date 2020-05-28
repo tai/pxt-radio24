@@ -31,7 +31,7 @@ namespace radio24 {
     /**
      * Register receive handler
      */
-    //% blockId=radio24_on_receive block="On receive of a buffer"
+    //% blockId=radio24_on_receive block="\uf0a4 On receive of a buffer"
     //% useLoc="radio24.onDataReceived" draggableParameters=reporter
     export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
         init();
@@ -41,7 +41,7 @@ namespace radio24 {
     /**
      * Register receive handler
      */
-    //% blockId=radio24_on_receive_string block="On receive of a string"
+    //% blockId=radio24_on_receive_string block="radio24: On receive of a string"
     //% useLoc="radio24.onDataReceived" draggableParameters=reporter
     export function onReceivedString(cb: (receivedString: string) => void) {
         init();
@@ -51,7 +51,7 @@ namespace radio24 {
     /**
      *  Enable nRF24 compatible radio
      */
-    //% blockId=radio24_enable block="Activate radio24 with band=$band, power=$power"
+    //% blockId=radio24_enable block="radio24: Activate with band=$band, power=$power"
     //% weight=90
     //% band.min=0 band.max=100 power.min=0 power.max=7
     //% shim=radio24::enable
@@ -120,11 +120,11 @@ namespace radio24 {
     }
 
     /**
-     * Ping test
+     * Run test
      */
-    //% blockId=radio24_ping block="Run test 002"
-    //% shim=radio24::ping
-    export function ping(): void {
+    //% blockId=radio24_test block="Run test"
+    //% shim=radio24::test
+    export function test(): void {
         basic.showString("SIM");
     }
 }

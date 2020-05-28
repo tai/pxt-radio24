@@ -51,7 +51,7 @@ namespace radio24 {
     }
 
     //%
-    void ping() {
+    void test() {
         uBit.display.scrollAsync("DEV");
     }
 }
