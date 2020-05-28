@@ -75,7 +75,6 @@ namespace radio24 {
     //% blockId=radio24_data_received_event block="Call on data received"
     //% blockHidden=true
     export function onDataReceived(body: () => void): void {
-        console.log("Hook registered");
         control.onEvent(
             EventBusSource.MICROBIT_ID_RADIO,
             EventBusValue.MICROBIT_RADIO_EVT_DATAGRAM, body
@@ -90,7 +89,6 @@ namespace radio24 {
      */
     //% shim=radio24::readBuffer
     export function readBuffer(): Buffer {
-        console.log("Reading buffer");
         if (simQueue.length > 0) {
             return simQueue.shift();
         }
@@ -104,7 +102,6 @@ namespace radio24 {
      */
     //% shim=radio24::sendBuffer
     export function sendBuffer(buf: Buffer) : void {
-        console.log("Sending buffer");
         simQueue.push(buf);
         control.raiseEvent(
             EventBusSource.MICROBIT_ID_RADIO,
