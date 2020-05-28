@@ -55,7 +55,7 @@ namespace radio24 {
      * @param band [0-100] Defaults to 7. Set frequency (2400+band[MHz]) to be used.
      * @param power [0-7] Defaults to 0. Set transmit power level.
      */
-    //% blockId=radio24_enable block="radio24: Set band=$band, power=$power"
+    //% blockId=radio24_enable block="radio24: Enable with group=$group, band=$band, power=$power"
     //% weight=90
     //% shim=radio24::enable
     export function enable(group: number, band: number, power: number): void {
@@ -116,6 +116,8 @@ namespace radio24 {
 
     /**
      * Send string
+     * 
+     * @param str String to send
      */
     //% blockId=radio24_send_string block="radio24: Send $str"
     export function sendString(str: string) {
