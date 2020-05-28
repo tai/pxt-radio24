@@ -63,8 +63,10 @@ namespace radio24 {
     }
 
     /** For simulator */
+    //% blockId=radio24_set_group block="Set group to $group"
+    //% group.min=0 group.max=255
     //% shim=radio24::setGroup
-    export function shim_setGroup(group: uint8): void {
+    function setGroup(group: uint8): void {
         return;
     }
 }

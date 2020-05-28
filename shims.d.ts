@@ -14,8 +14,7 @@ declare namespace radio24 {
     /**
      * Set group
      */
-    //% blockId=radio24_set_group block="Set group to $group"
-    //% group.min=0 group.max=255 shim=radio24::setGroup
+    //% shim=radio24::setGroup
     function setGroup(group: uint8): void;
 
     /**

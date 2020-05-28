@@ -35,8 +35,7 @@ namespace radio24 {
     /**
      * Set group
      */
-    //% blockId=radio24_set_group block="Set group to $group"
-    //% group.min=0 group.max=255
+    //%
     void setGroup(uint8_t group) {
         uBit.radio.setGroup(group);
     }
