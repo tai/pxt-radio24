@@ -55,7 +55,7 @@ namespace radio24 {
     //% weight=90
     //% band.min=0 band.max=100 power.min=0 power.max=7
     //% shim=radio24::enable
-    export function enable(band: number, power: number): void {
+    export function enable(band=7, power=0): void {
         console.log("Radio enabled");
     }
 
