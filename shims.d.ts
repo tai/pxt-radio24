@@ -6,6 +6,13 @@
 declare namespace radio24 {
 
     /**
+     * Internal use only. Receive handler.
+     */
+    //% blockId=radio24_data_received_event block="radio on data received"
+    //% deprecated=true blockHidden=true shim=radio24::onDataReceived
+    function onDataReceived(body: () => void): void;
+
+    /**
      * Read buffer data
      */
     //% shim=radio24::readBuffer
