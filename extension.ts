@@ -75,4 +75,14 @@ namespace radio24 {
         console.log("Setting radio group");
         return;
     }
+
+    /**
+     * Ping test
+     */
+    //% blockId=radio24_ping block="Run extension test"
+    //% shim=radio24::ping
+    export function ping(): void {
+        console.log("ping");
+        return;
+    }
 }

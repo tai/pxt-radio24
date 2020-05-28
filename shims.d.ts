@@ -23,12 +23,6 @@ declare namespace radio24 {
     //% blockId=radio24_data_received_event block="radio on data received"
     //% deprecated=true blockHidden=true shim=radio24::onDataReceived
     function onDataReceived(body: () => void): void;
-
-    /**
-     * Run ping test
-     */
-    //% blockId=radio24_ping block="Run extension test" shim=radio24::ping
-    function ping(): void;
 }
 
 // Auto-generated. Do not edit. Really.

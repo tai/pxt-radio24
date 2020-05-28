@@ -66,10 +66,7 @@ namespace radio24 {
         uBit.radio.datagram.recv();
     }
 
-    /**
-     * Run ping test
-     */
-    //% blockId=radio24_ping block="Run extension test"
+    //%
     void ping() {
         uBit.display.scrollAsync("AB");
     }
