@@ -57,11 +57,7 @@ namespace radio24 {
 
     /**
      * Read buffer data
-     * 
-     * @param buf Buffer to send
      */
-    //% blockId=radio24_read_buffer block="Read buffer over radio"
-    //% advanced=true blockHidden=true
     //% shim=radio24::readBuffer
     export function readBuffer(): Buffer {
         return Buffer.fromUTF8("ABC");
