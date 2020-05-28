@@ -10,7 +10,7 @@ declare namespace radio24 {
      */
     //% blockId=radio24_enable block="Activate radio with band=$band, power=$power"
     //% weight=10
-    //% band.min=0 band.max=99 power.min=0 power.max=7 band.defl=7 power.defl=0 shim=radio24::enable
+    //% band.min=0 band.max=100 power.min=0 power.max=7 band.defl=7 power.defl=0 shim=radio24::enable
     function enable(band?: int32, power?: int32): void;
 
     /**
