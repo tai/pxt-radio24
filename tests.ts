@@ -1,6 +1,6 @@
 
 basic.clearScreen()
-radio24.enable()
+radio24.enable(7, 7)
 
 input.onButtonPressed(Button.A, () => {
     basic.showString("A")
