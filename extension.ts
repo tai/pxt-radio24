@@ -4,12 +4,16 @@
  */
 namespace radio24 {
     let onReceivedBufferHandler: (receivedBuffer: Buffer) => void;
+    let onReceivedStringHandler: (receivedString: string) => void;
 
     function handleDataReceived() {
         let buffer: Buffer = readBuffer();
 
         while (buffer) {
-            if (onReceivedBufferHandler) {
+            if (onReceivedStringHandler) {
+                onReceivedStringHandler(buffer.toString());
+            }
+            else if (onReceivedBufferHandler) {
                 onReceivedBufferHandler(buffer);
             }
             buffer = readBuffer();
@@ -27,11 +31,21 @@ namespace radio24 {
     /**
      * Register receive handler
      */
-    //% blockId=radio24_on_receive block="on radio received"
+    //% blockId=radio24_on_receive block="On receive of a buffer"
     //% useLoc="radio24.onDataReceived" draggableParameters=reporter
     export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
         init();
         onReceivedBufferHandler = cb;
+    }
+
+    /**
+     * Register receive handler
+     */
+    //% blockId=radio24_on_receive_string block="On receive of a string"
+    //% useLoc="radio24.onDataReceived" draggableParameters=reporter
+    export function onReceivedString(cb: (receivedString: string) => void) {
+        init();
+        onReceivedStringHandler = cb;
     }
 
     /**
@@ -62,8 +76,6 @@ namespace radio24 {
     //% blockHidden=true
     export function onDataReceived(body: () => void): void {
         console.log("Hook registered");
-        //radio.onDataReceived(body);
-
         control.onEvent(
             EventBusSource.MICROBIT_ID_RADIO,
             EventBusValue.MICROBIT_RADIO_EVT_DATAGRAM, body
