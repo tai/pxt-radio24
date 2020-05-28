@@ -16,7 +16,12 @@ enum Mode {
 
 //% color="#AA278D" icon="\uf0a4"
 namespace radio24 {
-    //%
+    /**
+     *  Enable radio
+     */
+    //% blockId=radio24_enable block="Activate radio with band=$band, power=$power"
+    //% weight=10
+    //% band.min=0 band.max=100 power.min=0 power.max=7
     void enable(uint8_t band=7, uint8_t power=0) {
         uBit.radio.enable();
         uBit.radio.setTransmitPower(power);
@@ -29,7 +34,11 @@ namespace radio24 {
         NRF_RADIO->MODE = Mode_1Mbps;
     }
 
-    //%
+    /**
+     * Set radio group
+     */
+    //% blockId=radio24_set_group block="Set group to $group"
+    //% group.min=0 group.max=255
     void setGroup(uint8_t group) {
         uBit.radio.setGroup(group);
     }
@@ -46,6 +55,11 @@ namespace radio24 {
         return mkBuffer(p.getBytes(), p.length());
     }
 
+    /**
+     * Send raw packet
+     * 
+     * @param buf Buffer to send
+     */
     //%
     void sendRawPacket(Buffer msg) {
         char ch = "0123456789ABCDEF"[msg->length];
@@ -63,7 +77,10 @@ namespace radio24 {
         uBit.radio.datagram.recv();
     }
 
-    //%
+    /**
+     * Ping test
+     */
+    //% blockId=radio24_ping block="Run extension test"
     void ping() {
         uBit.display.scrollAsync("AB");
     }
