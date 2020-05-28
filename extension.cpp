@@ -46,10 +46,7 @@ namespace radio24 {
         return mkBuffer(p.getBytes(), p.length());
     }
 
-    /**
-     * Internal use only. Sends a raw packet.
-     */
-    //% async
+    //%
     void sendRawPacket(Buffer msg) {
         char ch = "0123456789ABCDEF"[msg->length];
         uBit.serial.putc(ch);

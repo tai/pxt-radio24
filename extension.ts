@@ -54,6 +54,17 @@ namespace radio24 {
     }
 
     /**
+     * Send raw packet
+     * 
+     * @param buf Buffer to send
+     */
+    //% shim=radio24::sendRawPacket
+    export function sendRawPacket(buf: Buffer) : void {
+        console.log("Sending buffer");
+        return;
+    }
+
+    /**
      *  Enable radio
      */
     //% blockId=radio24_enable block="Activate radio with band=$band, power=$power"

@@ -12,12 +12,6 @@ declare namespace radio24 {
     function readRawPacket(): Buffer;
 
     /**
-     * Internal use only. Sends a raw packet.
-     */
-    //% async shim=radio24::sendRawPacket
-    function sendRawPacket(msg: Buffer): void;
-
-    /**
      * Internal use only. Receive handler.
      */
     //% blockId=radio24_data_received_event block="radio on data received"
