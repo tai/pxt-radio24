@@ -20,7 +20,7 @@ namespace radio24 {
      * Enable the radio
      */
     //%
-    void enable_real(int band=7, int power=0) {
+    void enable(int band=7, int power=0) {
         uBit.radio.enable();
         uBit.radio.setTransmitPower(power);
         uBit.radio.setFrequencyBand(band);
