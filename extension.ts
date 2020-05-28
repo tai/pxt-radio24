@@ -55,18 +55,21 @@ namespace radio24 {
         console.log("Setting radio group");
     }
 
-    /*
+    /**
+     * Internal use only. Receive handler.
+     */
+    //% blockId=radio24_data_received_event block="Call on data received"
+    //% blockHidden=true
     export function onDataReceived(body: () => void): void {
         console.log("Hook registered");
-    }
-    */
+        //radio.onDataReceived(body);
 
-    /*
-    //% shim=radio24::readBuffer
-    export function readBuffer(): Buffer {
-        return Buffer.fromUTF8("ABC");
+        control.onEvent(
+            EventBusSource.MICROBIT_ID_RADIO,
+            EventBusValue.MICROBIT_RADIO_EVT_DATAGRAM, body
+        );
+        readBuffer();
     }
-    */
 
     /**
      * Send buffer data
