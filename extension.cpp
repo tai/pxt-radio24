@@ -16,11 +16,8 @@ enum Mode {
 
 //% color="#AA278D" icon="\uf0a4"
 namespace radio24 {
-    /**
-     * Enable the radio
-     */
     //%
-    void enable(int band=7, int power=0) {
+    void enable(uint8_t band=7, uint8_t power=0) {
         uBit.radio.enable();
         uBit.radio.setTransmitPower(power);
         uBit.radio.setFrequencyBand(band);
@@ -32,9 +29,6 @@ namespace radio24 {
         NRF_RADIO->MODE = Mode_1Mbps;
     }
 
-    /**
-     * Set group
-     */
     //%
     void setGroup(uint8_t group) {
         uBit.radio.setGroup(group);

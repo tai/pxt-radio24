@@ -6,18 +6,6 @@
 declare namespace radio24 {
 
     /**
-     * Enable the radio
-     */
-    //% band.defl=7 power.defl=0 shim=radio24::enable
-    function enable(band?: int32, power?: int32): void;
-
-    /**
-     * Set group
-     */
-    //% shim=radio24::setGroup
-    function setGroup(group: uint8): void;
-
-    /**
      * Receive data
      */
     //% shim=radio24::readRawPacket

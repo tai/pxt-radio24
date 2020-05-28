@@ -58,15 +58,15 @@ namespace radio24 {
     //% weight=10
     //% band.min=0 band.max=100 power.min=0 power.max=7
     //% shim=radio24::enable
-    function enable(band?: int32, power?: int32): void {
-        return;
+    export function enable(band?: uint8, power?: uint8): void {
+        console.log("Radio enabled");
     }
 
     /** For simulator */
     //% blockId=radio24_set_group block="Set group to $group"
     //% group.min=0 group.max=255
     //% shim=radio24::setGroup
-    function setGroup(group: uint8): void {
+    export function setGroup(group: uint8): void {
         return;
     }
 }
