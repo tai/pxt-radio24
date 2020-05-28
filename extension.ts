@@ -60,7 +60,7 @@ namespace radio24 {
      */
     //% shim=radio24::sendRawPacket
     export function sendRawPacket(buf: Buffer) : void {
-        console.log("Sending buffer");
+        //console.log("Sending buffer");
         return;
     }
 
@@ -72,7 +72,7 @@ namespace radio24 {
     //% band.min=0 band.max=100 power.min=0 power.max=7
     //% shim=radio24::enable
     export function enable(band?: uint8, power?: uint8): void {
-        console.log("Radio enabled");
+        //console.log("Radio enabled");
         return;
     }
 
@@ -83,7 +83,7 @@ namespace radio24 {
     //% group.min=0 group.max=255
     //% shim=radio24::setGroup
     export function setGroup(group: uint8): void {
-        console.log("Setting radio group");
+        //console.log("Setting radio group");
         return;
     }
 
