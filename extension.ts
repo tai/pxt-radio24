@@ -57,7 +57,7 @@ namespace radio24 {
     //% blockId=radio24_enable block="radio24: Join group=$group at band=$band"
     //% weight=90
     //% shim=radio24::enable
-    export function enable(group: number, band: number): void {
+    export function enable(group: uint8, band: uint8): void {
         console.log("Radio enabled");
     }
 
