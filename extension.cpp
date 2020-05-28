@@ -16,11 +16,7 @@ enum Mode {
 
 //% color="#AA278D" icon="\uf0a4"
 namespace radio24 {
-    /**
-     * Internal use only. Receive handler.
-     */
-    //% blockId=radio24_data_received_event block="radio on data received"
-    //% deprecated=true blockHidden=true
+    //%
     void onDataReceived(Action body) {
         registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
         uBit.radio.datagram.recv();

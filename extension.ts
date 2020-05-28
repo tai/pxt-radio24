@@ -55,6 +55,15 @@ namespace radio24 {
         console.log("Setting radio group");
     }
 
+    /**
+     * Internal use only. Receive handler.
+     */
+    //% blockId=radio24_data_received_event block="radio on data received"
+    //% deprecated=true blockHidden=true
+    export function onDataReceived(body: () => void): void {
+        console.log("Hook registered");
+    }
+
     /*
     //% shim=radio24::readBuffer
     export function readBuffer(): Buffer {
