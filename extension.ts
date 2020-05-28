@@ -62,7 +62,6 @@ namespace radio24 {
      */
     //% shim=radio24::readBuffer
     export function readBuffer(): Buffer {
-        basic.pause(100);
         return Buffer.fromUTF8("ABC");
     }
 
