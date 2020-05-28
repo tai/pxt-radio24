@@ -38,7 +38,7 @@ namespace radio24 {
      *  Enable nRF24 compatible radio
      */
     //% blockId=radio24_enable block="Activate radio24 with band=$band, power=$power"
-    //% weight=10
+    //% weight=90
     //% band.min=0 band.max=100 power.min=0 power.max=7
     //% shim=radio24::enable
     export function enable(band: number, power: number): void {
