@@ -43,10 +43,8 @@ namespace radio24 {
         return mkBuffer(p.getBytes(), p.length());
     }
 
-    //% async
+    //%
     void sendBuffer(Buffer msg) {
-        char ch = "0123456789ABCDEF"[msg->length];
-        uBit.serial.putc(ch);
         uBit.radio.datagram.send(msg->data, msg->length);
     }
 
