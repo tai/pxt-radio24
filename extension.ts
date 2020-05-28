@@ -58,7 +58,7 @@ namespace radio24 {
      * 
      * @param buf Buffer to send
      */
-    //%
+    //% shim=radio24::sendRawPacket
     export function sendRawPacket(buf: Buffer) : void {
         console.log("Sending buffer");
         return;
@@ -81,6 +81,7 @@ namespace radio24 {
      */
     //% blockId=radio24_set_group block="Set group to $group"
     //% group.min=0 group.max=255
+    //% shim=radio24::setGroup
     export function setGroup(group: uint8): void {
         console.log("Setting radio group");
         return;
@@ -90,6 +91,7 @@ namespace radio24 {
      * Ping test
      */
     //% blockId=radio24_ping block="Run extension test"
+    //% shim=radio24::ping
     export function ping(): void {
         basic.showString("SIM");
         return;
