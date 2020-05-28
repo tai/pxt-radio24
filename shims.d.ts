@@ -6,12 +6,6 @@
 declare namespace radio24 {
 
     /**
-     * Receive data
-     */
-    //% shim=radio24::readRawPacket
-    function readRawPacket(): Buffer;
-
-    /**
      * Internal use only. Receive handler.
      */
     //% blockId=radio24_data_received_event block="radio on data received"

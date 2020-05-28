@@ -16,6 +16,16 @@ enum Mode {
 
 //% color="#AA278D" icon="\uf0a4"
 namespace radio24 {
+    /**
+     * Internal use only. Receive handler.
+     */
+    //% blockId=radio24_data_received_event block="radio on data received"
+    //% deprecated=true blockHidden=true
+    void onDataReceived(Action body) {
+        registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
+        uBit.radio.datagram.recv();
+    }
+
     //%
     void enable(uint8_t band, uint8_t power) {
         uBit.radio.enable();
@@ -34,11 +44,8 @@ namespace radio24 {
         uBit.radio.setGroup(group);
     }
 
-    /**
-     * Receive data
-     */
     //%
-    Buffer readRawPacket() {
+    Buffer readBuffer() {
         auto p = uBit.radio.datagram.recv();
 
         if (p == PacketBuffer::EmptyPacket)
@@ -47,24 +54,14 @@ namespace radio24 {
     }
 
     //%
-    void sendRawPacket(Buffer msg) {
+    void sendBuffer(Buffer msg) {
         char ch = "0123456789ABCDEF"[msg->length];
         uBit.serial.putc(ch);
         uBit.radio.datagram.send(msg->data, msg->length);
     }
 
-    /**
-     * Internal use only. Receive handler.
-     */
-    //% blockId=radio24_data_received_event block="radio on data received"
-    //% deprecated=true blockHidden=true
-    void onDataReceived(Action body) {
-        registerWithDal(MICROBIT_ID_RADIO, MICROBIT_RADIO_EVT_DATAGRAM, body);
-        uBit.radio.datagram.recv();
-    }
-
     //%
     void ping() {
-        uBit.display.scrollAsync("AB");
+        uBit.display.scrollAsync("DEV");
     }
 }
