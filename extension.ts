@@ -82,7 +82,7 @@ namespace radio24 {
     //% blockId=radio24_ping block="Run extension test"
     //% shim=radio24::ping
     export function ping(): void {
-        console.log("ping");
+        basic.showString("SIM");
         return;
     }
 }
