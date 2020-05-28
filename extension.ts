@@ -71,6 +71,20 @@ namespace radio24 {
         readBuffer();
     }
 
+    let simQueue : Buffer[] = [];
+
+    /**
+     * Read buffer data
+     */
+    //% shim=radio24::readBuffer
+    export function readBuffer(): Buffer {
+        console.log("Reading buffer");
+        if (simQueue.length > 0) {
+            return simQueue.shift();
+        }
+        return null;
+    }
+
     /**
      * Send buffer data
      * 
@@ -79,6 +93,12 @@ namespace radio24 {
     //% shim=radio24::sendBuffer
     export function sendBuffer(buf: Buffer) : void {
         console.log("Sending buffer");
+        simQueue.push(buf);
+        control.raiseEvent(
+            EventBusSource.MICROBIT_ID_RADIO,
+            EventBusValue.MICROBIT_RADIO_EVT_DATAGRAM,
+            EventCreationMode.CreateAndFire
+        );
     }
 
     /**

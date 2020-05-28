@@ -34,9 +34,6 @@ namespace radio24 {
         uBit.radio.setGroup(group);
     }
 
-    /**
-     * Read buffer data
-     */
     //%
     Buffer readBuffer() {
         auto p = uBit.radio.datagram.recv();
