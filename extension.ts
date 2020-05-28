@@ -66,7 +66,7 @@ namespace radio24 {
      * 
      * @param mode Choose from Mode_1Mbps, Mode_2Mbps, and Mode_250Kbps.
      */
-    //% blockId=radio24_set_power block="radio24: Set mode to $mode"
+    //% blockId=radio24_set_mode block="radio24: Set mode to $mode"
     //% shim=radio24::setMode
     export function setMode(mode: Mode): void {
         console.log("Setting radio speed mode");
