@@ -31,7 +31,7 @@ namespace radio24 {
     /**
      * Register receive handler
      */
-    //% blockId=radio24_on_receive block="\uf0a4 On receive of a buffer"
+    //% blockId=radio24_on_receive block="radio24: On receive of"
     //% useLoc="radio24.onDataReceived" draggableParameters=reporter
     export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
         init();
@@ -41,7 +41,7 @@ namespace radio24 {
     /**
      * Register receive handler
      */
-    //% blockId=radio24_on_receive_string block="radio24: On receive of a string"
+    //% blockId=radio24_on_receive_string block="radio24: On receive of"
     //% useLoc="radio24.onDataReceived" draggableParameters=reporter
     export function onReceivedString(cb: (receivedString: string) => void) {
         init();
@@ -51,7 +51,7 @@ namespace radio24 {
     /**
      *  Enable nRF24 compatible radio
      */
-    //% blockId=radio24_enable block="radio24: Activate with band=$band, power=$power"
+    //% blockId=radio24_enable block="radio24: Set band=$band, power=$power"
     //% weight=90
     //% band.min=0 band.max=100 power.min=0 power.max=7
     //% shim=radio24::enable
@@ -62,7 +62,7 @@ namespace radio24 {
     /**
      * Set radio group
      */
-    //% blockId=radio24_set_group block="Set group to $group"
+    //% blockId=radio24_set_group block="radio24: Set group to $group"
     //% group.min=0 group.max=255
     //% shim=radio24::setGroup
     export function setGroup(group: uint8): void {
@@ -113,7 +113,7 @@ namespace radio24 {
     /**
      * Send string
      */
-    //% blockId=radio24_send_string block="Send $str"
+    //% blockId=radio24_send_string block="radio24: Send $str"
     export function sendString(str: string) {
         let buf = control.createBufferFromUTF8(str);
         sendBuffer(buf);
@@ -122,7 +122,7 @@ namespace radio24 {
     /**
      * Run test
      */
-    //% blockId=radio24_test block="Run test"
+    //% blockId=radio24_test block="radio24: Run test"
     //% shim=radio24::test
     export function test(): void {
         basic.showString("SIM");
