@@ -8,8 +8,8 @@ declare namespace radio24 {
     /**
      * Enable the radio
      */
-    //% band.defl=7 power.defl=0 shim=radio24::enable
-    function enable(band?: int32, power?: int32): void;
+    //% band.defl=7 power.defl=0 shim=radio24::enable_real
+    function enable_real(band?: int32, power?: int32): void;
 
     /**
      * Set group
