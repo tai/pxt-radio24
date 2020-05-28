@@ -55,11 +55,8 @@ namespace radio24 {
         console.log("Setting radio group");
     }
 
-    /**
-     * Read buffer data
-     */
     //% shim=radio24::readBuffer
-    export function readBuffer(): Buffer {
+    export function xreadBuffer(): Buffer {
         return Buffer.fromUTF8("ABC");
     }
 
