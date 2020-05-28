@@ -55,6 +55,8 @@ namespace radio24 {
 
     /** For simulator. */
     //% blockId=radio24_enable block="Activate radio with band=$band, power=$power"
+    //% weight=10
+    //% band.min=0 band.max=100 power.min=0 power.max=7
     //% shim=radio24::enable
     export function shim_enable(band?: int32, power?: int32): void {
         return;

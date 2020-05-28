@@ -19,9 +19,7 @@ namespace radio24 {
     /**
      * Enable the radio
      */
-    //% blockId=radio24_enable block="Activate radio with band=$band, power=$power"
-    //% weight=10
-    //% band.min=0 band.max=100 power.min=0 power.max=7
+    //%
     void enable(int band=7, int power=0) {
         uBit.radio.enable();
         uBit.radio.setTransmitPower(power);
