@@ -55,12 +55,15 @@ namespace radio24 {
         console.log("Setting radio group");
     }
 
-    /*
+    /**
+     * Read buffer data
+     * 
+     * @param buf Buffer to send
+     */
     //% shim=radio24::readBuffer
     export function readBuffer(): Buffer {
         return Buffer.fromUTF8("ABC");
     }
-    */
 
     /**
      * Send buffer data
@@ -84,7 +87,7 @@ namespace radio24 {
     /**
      * Ping test
      */
-    //% blockId=radio24_ping block="Run test 001"
+    //% blockId=radio24_ping block="Run test 002"
     //% shim=radio24::ping
     export function ping(): void {
         basic.showString("SIM");
