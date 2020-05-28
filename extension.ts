@@ -62,6 +62,7 @@ namespace radio24 {
     //% shim=radio24::enable
     export function enable(band?: uint8, power?: uint8): void {
         console.log("Radio enabled");
+        return;
     }
 
     /**
@@ -71,6 +72,7 @@ namespace radio24 {
     //% group.min=0 group.max=255
     //% shim=radio24::setGroup
     export function setGroup(group: uint8): void {
+        console.log("Setting radio group");
         return;
     }
 }
