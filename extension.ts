@@ -52,24 +52,44 @@ namespace radio24 {
         let buf = control.createBufferFromUTF8(str);
         sendRawPacket(buf);
     }
-}
 
-namespace pxsim.radio24 {
+    /**
+     * Send raw packet
+     * 
+     * @param buf Buffer to send
+     */
+    //%
     export function sendRawPacket(buf: Buffer) : void {
         console.log("Sending buffer");
         return;
     }
 
+    /**
+     *  Enable radio
+     */
+    //% blockId=radio24_enable block="Activate radio with band=$band, power=$power"
+    //% weight=10
+    //% band.min=0 band.max=100 power.min=0 power.max=7
+    //% shim=radio24::enable
     export function enable(band?: uint8, power?: uint8): void {
         console.log("Radio enabled");
         return;
     }
 
+    /**
+     * Set radio group
+     */
+    //% blockId=radio24_set_group block="Set group to $group"
+    //% group.min=0 group.max=255
     export function setGroup(group: uint8): void {
         console.log("Setting radio group");
         return;
     }
 
+    /**
+     * Ping test
+     */
+    //% blockId=radio24_ping block="Run extension test"
     export function ping(): void {
         basic.showString("SIM");
         return;
