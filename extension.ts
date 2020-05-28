@@ -53,7 +53,9 @@ namespace radio24 {
         sendRawPacket(buf);
     }
 
-    /** For simulator. */
+    /**
+     *  Enable radio
+     */
     //% blockId=radio24_enable block="Activate radio with band=$band, power=$power"
     //% weight=10
     //% band.min=0 band.max=100 power.min=0 power.max=7
@@ -62,7 +64,9 @@ namespace radio24 {
         console.log("Radio enabled");
     }
 
-    /** For simulator */
+    /**
+     * Set radio group
+     */
     //% blockId=radio24_set_group block="Set group to $group"
     //% group.min=0 group.max=255
     //% shim=radio24::setGroup
