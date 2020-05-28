@@ -31,6 +31,11 @@ namespace radio24 {
     }
 
     //%
+    void setMode(Mode mode) {
+        NRF_RADIO->MODE = mode;
+    }
+
+    //%
     void setGroup(uint8_t group) {
         uBit.radio.setGroup(group);
     }
