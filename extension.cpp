@@ -17,8 +17,9 @@ enum Mode {
 //% color="#AA278D" icon="\uf0a4"
 namespace radio24 {
     //%
-    void enable(uint8_t band, uint8_t power) {
+    void enable(uint8_t group, uint8_t band, uint8_t power) {
         uBit.radio.enable();
+        uBit.radio.setGroup(group);
         uBit.radio.setTransmitPower(power);
         uBit.radio.setFrequencyBand(band);
 

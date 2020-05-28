@@ -50,20 +50,24 @@ namespace radio24 {
 
     /**
      *  Enable nRF24 compatible radio
+     * 
+     * @param group [0-255] Defaults to 0. Set group ID to communicate.
+     * @param band [0-100] Defaults to 7. Set frequency (2400+band[MHz]) to be used.
+     * @param power [0-7] Defaults to 0. Set transmit power level.
      */
     //% blockId=radio24_enable block="radio24: Set band=$band, power=$power"
     //% weight=90
-    //% band.min=0 band.max=100 power.min=0 power.max=7
     //% shim=radio24::enable
-    export function enable(band=7, power=0): void {
+    export function enable(group: number, band: number, power: number): void {
         console.log("Radio enabled");
     }
 
     /**
      * Set radio group
+     * 
+     * @param group [0-255] Defaults to 0. Set group ID to communicate.
      */
     //% blockId=radio24_set_group block="radio24: Set group to $group"
-    //% group.min=0 group.max=255
     //% shim=radio24::setGroup
     export function setGroup(group: uint8): void {
         console.log("Setting radio group");
