@@ -57,7 +57,7 @@ namespace radio24 {
     //% blockId=radio24_enable block="radio24: Join group=$group at band=$band"
     //% weight=90
     //% shim=radio24::enable
-    export function enable(group: uint8, band: uint8): void {
+    export function enable(group: number, band: number): void {
         console.log("Radio enabled");
     }
 
@@ -68,7 +68,7 @@ namespace radio24 {
      */
     //% blockId=radio24_set_power block="radio24: Set transmit power to $power"
     //% shim=radio24::setPower
-    export function setPower(power: uint8): void {
+    export function setPower(power: number): void {
         console.log("Setting radio power");
     }
 
@@ -79,7 +79,7 @@ namespace radio24 {
      */
     //% blockId=radio24_set_group block="radio24: Join group=$group"
     //% shim=radio24::setGroup
-    export function setGroup(group: uint8): void {
+    export function setGroup(group: number): void {
         console.log("Setting radio group");
     }
 
