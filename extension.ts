@@ -5,16 +5,6 @@
 namespace radio24 {
     let onReceivedBufferHandler: (receivedBuffer: Buffer) => void;
 
-    /**
-     * Register receive handler
-     */
-    //% blockId=radio24_on_receive block="on radio received"
-    //% useLoc="radio24.onDataReceived" draggableParameters=reporter
-    export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
-        init();
-        onReceivedBufferHandler = cb;
-    }
-
     function handleDataReceived() {
         let buffer: Buffer = readBuffer();
 
@@ -32,6 +22,16 @@ namespace radio24 {
             initialized = true;
             onDataReceived(handleDataReceived);
         }
+    }
+
+    /**
+     * Register receive handler
+     */
+    //% blockId=radio24_on_receive block="on radio received"
+    //% useLoc="radio24.onDataReceived" draggableParameters=reporter
+    export function onReceivedBuffer(cb: (receivedBuffer: Buffer) => void) {
+        init();
+        onReceivedBufferHandler = cb;
     }
 
     /**
@@ -55,15 +55,12 @@ namespace radio24 {
         console.log("Setting radio group");
     }
 
-    /**
-     * Read buffer data
-     * 
-     * @param buf Buffer to send
-     */
+    /*
     //% shim=radio24::readBuffer
     export function readBuffer(): Buffer {
         return Buffer.fromUTF8("ABC");
     }
+    */
 
     /**
      * Send buffer data

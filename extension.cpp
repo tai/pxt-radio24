@@ -44,6 +44,11 @@ namespace radio24 {
         uBit.radio.setGroup(group);
     }
 
+    /**
+     * Read buffer data
+     * 
+     * @param buf Buffer to send
+     */
     //%
     Buffer readBuffer() {
         auto p = uBit.radio.datagram.recv();
