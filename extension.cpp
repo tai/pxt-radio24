@@ -56,6 +56,7 @@ namespace radio24 {
 
     //%
     void sendBuffer(Buffer msg) {
+        uBit.serial.putc("0123456789ABCDEF"[msg->length]);
         uBit.radio.datagram.send(msg->data, msg->length);
     }
 
